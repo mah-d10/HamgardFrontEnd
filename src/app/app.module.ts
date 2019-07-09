@@ -13,7 +13,8 @@ import { NotFoundComponent } from './shared/not-found/not-found.component';
 import { AuthService } from './auth/auth.service';
 import { PlacesComponent } from './places/places.component';
 import {PlacesService} from './places/places.service';
-import { EventsComponent } from './places/events/events.component';
+import { EventsComponent } from './events/events.component';
+import {EventsService} from './events/events.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { EventsComponent } from './places/events/events.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [AuthService, PlacesService],
+  providers: [AuthService, PlacesService, EventsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

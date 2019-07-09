@@ -15,7 +15,9 @@ export class EventsService {
 
   getEvents() {
     const hs = new HttpHeaders({Authorization: this.authService.getToken()});
-    return this.http.get(this.host + '/event/api/v1/events/', {headers: hs});
+    return this.http.get(this.host + '/event/api/v1/events/search', {
+      params: {q: ''}, headers: hs
+    });
   }
 
   search(searchString: string) {
