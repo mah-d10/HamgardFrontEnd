@@ -13,6 +13,7 @@ import { NotFoundComponent } from './shared/not-found/not-found.component';
 import { AuthService } from './auth/auth.service';
 import { PlacesComponent } from './places/places.component';
 import {PlacesService} from './places/places.service';
+import { EventsComponent } from './places/events/events.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {PlacesService} from './places/places.service';
     SignupComponent,
     SigninComponent,
     NotFoundComponent,
-    PlacesComponent
+    PlacesComponent,
+    EventsComponent
   ],
   imports: [
     BrowserModule,
