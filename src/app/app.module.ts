@@ -15,6 +15,7 @@ import { GroupsComponent } from './groups/groups.component';
 import { GroupsStartComponent } from './groups/groups-start/groups-start.component';
 import { GroupsEditComponent } from './groups/groups-edit/groups-edit.component';
 import { GroupsNewComponent } from './groups/groups-new/groups-new.component';
+import { GroupsListComponent } from './groups/groups-list/groups-list.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { GroupsNewComponent } from './groups/groups-new/groups-new.component';
     GroupsComponent,
     GroupsStartComponent,
     GroupsEditComponent,
-    GroupsNewComponent
+    GroupsNewComponent,
+    GroupsListComponent
   ],
   imports: [
     BrowserModule,
