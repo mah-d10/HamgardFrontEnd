@@ -14,6 +14,7 @@ import {AuthService} from './auth/auth.service';
 import { GroupsComponent } from './groups/groups.component';
 import { GroupsStartComponent } from './groups/groups-start/groups-start.component';
 import { GroupsEditComponent } from './groups/groups-edit/groups-edit.component';
+import { GroupsNewComponent } from './groups/groups-new/groups-new.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { GroupsEditComponent } from './groups/groups-edit/groups-edit.component'
     NotFoundComponent,
     GroupsComponent,
     GroupsStartComponent,
-    GroupsEditComponent
+    GroupsEditComponent,
+    GroupsNewComponent
   ],
   imports: [
     BrowserModule,
