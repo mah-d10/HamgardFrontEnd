@@ -43,7 +43,7 @@ export class AuthService {
   }
 
   signoutUser() {
-    const hs = new HttpHeaders({Authorization: this.token});
+    const hs = new HttpHeaders({Authorization: this.getToken()});
     this.token = null;
     localStorage.clear();
     this.router.navigate(['/']);
