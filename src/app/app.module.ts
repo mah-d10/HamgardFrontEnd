@@ -15,6 +15,7 @@ import { PlacesComponent } from './places/places.component';
 import {PlacesService} from './places/places.service';
 import { EventsComponent } from './events/events.component';
 import {EventsService} from './events/events.service';
+import { PlaceItemComponent } from './places/place-item/place-item.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {EventsService} from './events/events.service';
     SigninComponent,
     NotFoundComponent,
     PlacesComponent,
-    EventsComponent
+    EventsComponent,
+    PlaceItemComponent
   ],
   imports: [
     BrowserModule,
