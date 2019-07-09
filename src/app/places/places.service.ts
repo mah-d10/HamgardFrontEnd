@@ -18,6 +18,13 @@ export class PlacesService {
     return this.http.get(this.host + '/event/api/v1/places/', {headers: hs});
   }
 
+  search(searchString: string) {
+    const hs = new HttpHeaders({Authorization: this.authService.getToken()});
+    return this.http.get(this.host + '/event/api/v1/places/search', {
+      params: {q: searchString}, headers: hs
+    });
+  }
+
   getPlaceIDbyIndex(index: number) {
     return 5;
     // to do

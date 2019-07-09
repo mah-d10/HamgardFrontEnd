@@ -1,11 +1,13 @@
 <div class="container mt-3">
 
-  <form class="navbar-form" role="search">
+  <form class="navbar-form" role="search" ngForm>
     <div class="input-group mb-4">
-      <input id="exampleFormControlInput1"
+      <input id="searchInput"
              placeholder="What're you searching for?"
-             class="form-control form-control-underlined">
-      <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
+             name="searchInput"
+             class="form-control form-control-underlined" [(ngModel)]="searchString">
+      <button *ngIf="!searchBtnClicked" class="btn" (click)="search()"><i class="fa fa-search"></i></button>
+      <button *ngIf="searchBtnClicked" class="btn" (click)="clearSearch()"><i class="fa fa-times-circle"></i></button>
     </div>
   </form>
 
