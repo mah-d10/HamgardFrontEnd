@@ -23,6 +23,7 @@ export class GroupsListComponent implements OnInit {
         for (const g of response) {
           this.grpService.addGroup(g);
           console.log('logging the response for getGroups' + g);
+          console.log('summary' + g.summary);
         }
       }
     );
