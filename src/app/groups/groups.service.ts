@@ -27,21 +27,24 @@ export class GroupsService {
     return this.groups[index];
   }
 
-  public createGroup(n: string, email1: string, email2: string, email3: string) {
+  public createGroup(n: string, email1: string, email2: string, email3: string, sum: string) {
     const hs = new HttpHeaders({Authorization: this.authService.getToken()});
     return this.http.post(this.host + '/group/api/v1/create_group/', {
       name: n,
-      emails: [email1, email2, email3]
+      emails: [email1, email2, email3],
+      summary: sum
     }, { headers: hs});
     this.router.navigate(['/']);
   }
 
   public getUsersOfTheGroup(gid: number) {
-    // return this.http.get(this.host + '/api/groups/detail/' + gid + '/', {headers: this.headers});
+    const hs = new HttpHeaders({Authorization: this.authService.getToken()});
+    return this.http.get(this.host + '/group/api/v1/members/' + gid + '/', {headers: hs});
   }
 
   public leaveGroup(gid: number) {
-    // return this.http.post(this.host + '/api/groups/leave/', { group_id: gid}, {headers: this.headers} );
+    const hs = new HttpHeaders({Authorization: this.authService.getToken()});
+    return this.http.post(this.host + '/api/groups/leave/', { group_id: gid}, {headers: hs});
   }
 
 /*  public getIDbyIndex(index: number) {
@@ -55,8 +58,9 @@ export class GroupsService {
   }*/
 
   public addGroup(g) {
-    const obj = new Group(g.id, g.name, g.admin_id, g.members_count, g.index, g.admin_email, null);
+    const obj = new Group(g.id, g.name, g.admin_id, g.members_count, g.admin_email, null);
     this.groups.push(obj);
+    console.log('added new groups to list: ' + obj);
   }
 
   public getSelected() {

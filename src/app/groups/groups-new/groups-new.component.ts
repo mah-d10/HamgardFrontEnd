@@ -20,7 +20,8 @@ export class GroupsNewComponent implements OnInit {
     const u1Email = form.value.u1;
     const u2Email = form.value.u2;
     const u3Email = form.value.u3;
-    this.grpService.createGroup(name, u1Email, u2Email, u3Email)
+    const summary = form.value.sum;
+    this.grpService.createGroup(name, u1Email, u2Email, u3Email, summary)
       .subscribe(
         (response) => {
           console.log(response);
