@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {EventsService} from './events.service';
 import {Router} from '@angular/router';
-import {computeStyle} from '@angular/animations/browser/src/util';
+
 
 @Component({
   selector: 'app-events',

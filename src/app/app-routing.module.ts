@@ -11,6 +11,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'signin', component: SigninComponent },
   { path: 'signup', component: SignupComponent },
+  { path: 'places/:id', component: PlacesComponent},
   { path: 'places', component:  PlacesComponent},
   { path: 'events', component: EventsComponent},
   { path: '**', component: NotFoundComponent }
