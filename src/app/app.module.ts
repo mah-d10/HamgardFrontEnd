@@ -10,8 +10,9 @@ import { HomeComponent } from './home/home.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
-import {AuthService} from './auth/auth.service';
+import { AuthService } from './auth/auth.service';
 import { PlacesComponent } from './places/places.component';
+import {PlacesService} from './places/places.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { PlacesComponent } from './places/places.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, PlacesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
