@@ -87,5 +87,6 @@ export class PlacesComponent implements OnInit {
   clearSearch() {
     this.searchString = '';
     this.searchBtnClicked = false;
+    this.ngOnInit();
   }
 }
