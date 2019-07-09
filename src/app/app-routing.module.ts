@@ -6,12 +6,13 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
 import { PlacesComponent } from './places/places.component';
 import {EventsComponent} from './events/events.component';
+import {PlaceItemComponent} from './places/place-item/place-item.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'signin', component: SigninComponent },
   { path: 'signup', component: SignupComponent },
-  { path: 'places/:id', component: PlacesComponent},
+  { path: 'places/:id', component: PlaceItemComponent},
   { path: 'places', component:  PlacesComponent},
   { path: 'events', component: EventsComponent},
   { path: '**', component: NotFoundComponent }
