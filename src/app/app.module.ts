@@ -13,6 +13,7 @@ import { NotFoundComponent } from './shared/not-found/not-found.component';
 import {AuthService} from './auth/auth.service';
 import { GroupsComponent } from './groups/groups.component';
 import { GroupsStartComponent } from './groups/groups-start/groups-start.component';
+import { GroupsEditComponent } from './groups/groups-edit/groups-edit.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { GroupsStartComponent } from './groups/groups-start/groups-start.compone
     SigninComponent,
     NotFoundComponent,
     GroupsComponent,
-    GroupsStartComponent
+    GroupsStartComponent,
+    GroupsEditComponent
   ],
   imports: [
     BrowserModule,
