@@ -12,6 +12,7 @@ import { SigninComponent } from './auth/signin/signin.component';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
 import {AuthService} from './auth/auth.service';
 import { GroupsComponent } from './groups/groups.component';
+import { GroupsStartComponent } from './groups/groups-start/groups-start.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { GroupsComponent } from './groups/groups.component';
     SignupComponent,
     SigninComponent,
     NotFoundComponent,
-    GroupsComponent
+    GroupsComponent,
+    GroupsStartComponent
   ],
   imports: [
     BrowserModule,
