@@ -1,0 +1,22 @@
+.navbar {
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.navbar-brand > img {
+  height: 35px;
+  transition: 0.4s time;
+}
+
+.nav > li > a:hover,
+.nav > li > a:focus {
+  color: #333;
+  background: #f2f2f2;
+}
+
+a {
+  transition: all .2s linear;
+}
+
+a:focus {
+  outline: none;
+}
