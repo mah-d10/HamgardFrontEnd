@@ -11,6 +11,7 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
 import {AuthService} from './auth/auth.service';
+import { GroupsComponent } from './groups/groups.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {AuthService} from './auth/auth.service';
     HomeComponent,
     SignupComponent,
     SigninComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    GroupsComponent
   ],
   imports: [
     BrowserModule,
