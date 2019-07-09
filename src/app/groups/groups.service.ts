@@ -44,7 +44,7 @@ export class GroupsService {
 
   public leaveGroup(gid: number) {
     const hs = new HttpHeaders({Authorization: this.authService.getToken()});
-    return this.http.post(this.host + '/api/groups/leave/', { group_id: gid}, {headers: hs});
+    return this.http.post(this.host + '/group/api/v1/leave/', { group_id: gid}, {headers: hs});
   }
 
 /*  public getIDbyIndex(index: number) {
@@ -58,9 +58,8 @@ export class GroupsService {
   }*/
 
   public addGroup(g) {
-    const obj = new Group(g.id, g.name, g.admin_id, g.members_count, g.admin_email, null);
+    const obj = new Group(g.id, g.name, g.admin_id, g.members_count, g.admin_email, null, g.summary);
     this.groups.push(obj);
-    console.log('added new groups to list: ' + obj);
   }
 
   public getSelected() {

@@ -7,14 +7,16 @@ export class Group {
   public users: User[];
   public userCount: number;
   public adminEmail: string;
+  public summary: string;
 
 
-  constructor(gid, name, adminID, uCount, adminEmail, users) {
+  constructor(gid, name, adminID, uCount, adminEmail, users, summary) {
     this.gID = gid;
     this.name = name;
     this.adminID = adminID;
     this.users = users;
     this.userCount = uCount;
     this.adminEmail = adminEmail;
+    this.summary = summary;
   }
 }

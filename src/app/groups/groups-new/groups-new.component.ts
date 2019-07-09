@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms';
 
 import {GroupsService} from '../groups.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-groups-new',
@@ -10,7 +11,8 @@ import {GroupsService} from '../groups.service';
 })
 export class GroupsNewComponent implements OnInit {
 
-  constructor(private grpService: GroupsService) { }
+  constructor(private grpService: GroupsService,
+              private router: Router) { }
 
   ngOnInit() {
   }

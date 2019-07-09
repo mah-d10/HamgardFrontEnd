@@ -1,3 +1,22 @@
-<p>
-  groups-edit works!
-</p>
+<div class="row">
+  <label class="col-sm-2">Admin:</label>
+  <div class="col-sm-10">
+    <p> {{ this.adminEmail }}</p>
+  </div>
+</div>
+<div class="row" *ngFor="let u of userEmails">
+  <label class="col-sm-2">User:</label>
+  <div class="col-sm-10">
+    <p> {{ u }}</p>
+  </div>
+</div>
+<div class="row">
+  <label class="col-sm-2">Summary:</label>
+  <div class="col-sm-10">
+    <p> {{ this.group.summary }}</p>
+  </div>
+</div>
+
+<div class="row mt-2">
+  <button (click)="leaveClicked()" class="btn btn-danger">Leave</button>
+</div>
