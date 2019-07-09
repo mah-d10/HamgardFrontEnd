@@ -4,11 +4,20 @@ import { SigninComponent } from './auth/signin/signin.component';
 import { HomeComponent } from './home/home.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import {NotFoundComponent} from './shared/not-found/not-found.component';
+import {GroupsComponent} from './groups/groups.component';
+import {GroupsStartComponent} from './groups/groups-start/groups-start.component';
+import {GroupsEditComponent} from './groups/groups-edit/groups-edit.component';
+import {GroupsNewComponent} from './groups/groups-new/groups-new.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'signin', component: SigninComponent },
   { path: 'signup', component: SignupComponent },
+  { path: 'groups', component: GroupsComponent, children: [
+      { path: '', component: GroupsStartComponent},
+      { path: 'new', component: GroupsNewComponent},
+      { path: ':index', component: GroupsEditComponent}
+    ] },
   { path: '**', component: NotFoundComponent }
 ];
 
