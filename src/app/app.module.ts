@@ -16,6 +16,7 @@ import { GroupsStartComponent } from './groups/groups-start/groups-start.compone
 import { GroupsEditComponent } from './groups/groups-edit/groups-edit.component';
 import { GroupsNewComponent } from './groups/groups-new/groups-new.component';
 import { GroupsListComponent } from './groups/groups-list/groups-list.component';
+import {GroupsService} from './groups/groups.service';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,7 @@ import { GroupsListComponent } from './groups/groups-list/groups-list.component'
     FormsModule,
     HttpClientModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, GroupsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
