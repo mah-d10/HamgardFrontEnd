@@ -12,4 +12,6 @@ export class GroupsComponent implements OnInit {
   ngOnInit() {
   }
 
+  createClicked() {
+  }
 }
