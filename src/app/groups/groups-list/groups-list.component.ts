@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Group} from '../../shared/group.model';
+import {GroupsService} from '../groups.service';
+import {User} from '../../shared/user.model';
 
 @Component({
   selector: 'app-groups-list',
@@ -7,9 +10,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GroupsListComponent implements OnInit {
 
-  constructor() { }
+  groups: Group[] = [];
 
-  ngOnInit() {
+  constructor(private grpService: GroupsService) {
   }
 
+  ngOnInit() {
+    this.grpService.groups = [];
+    this.grpService.getGroups().subscribe(
+      (response: any[]) => {
+        console.log('getGroups response is' + response);
+        for (const g of response) {
+          this.grpService.addGroup(g);
+        }
+      }
+    );
+    this.groups = this.grpService.groups;
+  }
+
+  groupSelected(index: number) {
+    this.grpService.selectedIndex = index;
+  }
 }

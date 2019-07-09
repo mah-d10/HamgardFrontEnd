@@ -7,19 +7,20 @@ import {AuthService} from '../auth/auth.service';
 @Injectable()
 export class GroupsService {
   host = 'http://192.168.43.124:8001';
-  headers = new HttpHeaders({Authorization: this.authService.getToken()});
   public selectedIndex: number;
 
   constructor(private  router: Router,
               private  http: HttpClient,
-              private  authService: AuthService) {}
+              private  authService: AuthService) {
+  }
 
   public groupSelected = new EventEmitter<Group>();
 
   groups: Group[] = [];
 
   public getGroups() {
-    return this.http.get(this.host + '/api/groups/all/', { headers: this.headers});
+    const hs = new HttpHeaders({Authorization: this.authService.getToken()});
+    return this.http.get(this.host + '/group/api/v1/groups/', { headers: hs});
   }
 
   public getGroup(index: number) {
@@ -27,19 +28,20 @@ export class GroupsService {
   }
 
   public createGroup(n: string, email1: string, email2: string, email3: string) {
-    return this.http.post(this.host + '/api/groups/create/', {
+    const hs = new HttpHeaders({Authorization: this.authService.getToken()});
+    return this.http.post(this.host + '/group/api/v1/create_group/', {
       name: n,
       emails: [email1, email2, email3]
-    }, { headers: this.headers});
+    }, { headers: hs});
     this.router.navigate(['/']);
   }
 
   public getUsersOfTheGroup(gid: number) {
-    return this.http.get(this.host + '/api/groups/detail/' + gid + '/', {headers: this.headers});
+    // return this.http.get(this.host + '/api/groups/detail/' + gid + '/', {headers: this.headers});
   }
 
   public leaveGroup(gid: number) {
-    return this.http.post(this.host + '/api/groups/leave/', { group_id: gid}, {headers: this.headers} );
+    // return this.http.post(this.host + '/api/groups/leave/', { group_id: gid}, {headers: this.headers} );
   }
 
 /*  public getIDbyIndex(index: number) {
