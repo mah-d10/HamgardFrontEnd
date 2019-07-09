@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Group} from '../../shared/group.model';
 import {GroupsService} from '../groups.service';
-import {User} from '../../shared/user.model';
+
 
 @Component({
   selector: 'app-groups-list',
@@ -22,6 +22,7 @@ export class GroupsListComponent implements OnInit {
         console.log('getGroups response is' + response);
         for (const g of response) {
           this.grpService.addGroup(g);
+          console.log('logging the response for getGroups' + g);
         }
       }
     );
