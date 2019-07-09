@@ -22,6 +22,9 @@
         <li *ngIf="authServive.isAuthenticated()" class="nav-item"  routerLinkActive="active">
           <a class="nav-link" routerLink="/places">Places</a>
         </li>
+        <li *ngIf="authServive.isAuthenticated()" class="nav-item"  routerLinkActive="active">
+          <a class="nav-link" routerLink="/events">Events</a>
+        </li>
         <li *ngIf="!authServive.isAuthenticated()" class="nav-item"  routerLinkActive="active">
           <a class="nav-link" routerLink="/signup">Signup</a>
         </li>
