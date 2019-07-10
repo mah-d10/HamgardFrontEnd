@@ -8,6 +8,10 @@ import { PlacesComponent } from './places/places.component';
 import {EventsComponent} from './events/events.component';
 import {PlaceItemComponent} from './places/place-item/place-item.component';
 import {EventItemComponent} from './events/event-item/event-item.component';
+import {GroupsComponent} from './groups/groups.component';
+import {GroupsStartComponent} from './groups/groups-start/groups-start.component';
+import {GroupsNewComponent} from './groups/groups-new/groups-new.component';
+import {GroupsEditComponent} from './groups/groups-edit/groups-edit.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -17,6 +21,11 @@ const routes: Routes = [
   { path: 'places', component:  PlacesComponent},
   { path: 'events/:id', component: EventItemComponent},
   { path: 'events', component: EventsComponent},
+  { path: 'groups', component: GroupsComponent, children: [
+      { path: '', component: GroupsStartComponent},
+      { path: 'new', component: GroupsNewComponent},
+      { path: ':index', component: GroupsEditComponent}
+    ] },
   { path: '**', component: NotFoundComponent }
 ];
 
