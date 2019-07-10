@@ -14,7 +14,7 @@
   <div class="row mt-2 mb-2" *ngFor="let r of this.places; let ri = index;">
     <div *ngFor="let p of r; let pi = index" class="col-md-3">
       <div (click)="cardSelected(ri, pi)" class="card text-center" style="cursor: pointer">
-        <img class="card-img-top" src="https://via.placeholder.com/40.png" alt="Card image cap">
+        <img class="card-img-top" src="{{'http://192.168.43.124:8001' + p.images[0] }}" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">{{ p.name }}</h5>
           <p class="card-text">{{ p.address }}</p>
