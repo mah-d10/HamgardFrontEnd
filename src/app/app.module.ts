@@ -17,6 +17,11 @@ import { EventsComponent } from './events/events.component';
 import {EventsService} from './events/events.service';
 import { PlaceItemComponent } from './places/place-item/place-item.component';
 import { EventItemComponent } from './events/event-item/event-item.component';
+import {GroupsNewComponent} from './groups/groups-new/groups-new.component';
+import {GroupsEditComponent} from './groups/groups-edit/groups-edit.component';
+import {GroupsStartComponent} from './groups/groups-start/groups-start.component';
+import {GroupsComponent} from './groups/groups.component';
+import {GroupsService} from './groups/groups.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +34,11 @@ import { EventItemComponent } from './events/event-item/event-item.component';
     PlacesComponent,
     EventsComponent,
     PlaceItemComponent,
-    EventItemComponent
+    EventItemComponent,
+    GroupsNewComponent,
+    GroupsEditComponent,
+    GroupsStartComponent,
+    GroupsComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +46,7 @@ import { EventItemComponent } from './events/event-item/event-item.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [AuthService, PlacesService, EventsService],
+  providers: [AuthService, PlacesService, EventsService, GroupsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
