@@ -1,3 +1,17 @@
-<div class="container">
-  YOSH!
+<div class="container mt-3">
+  <h2>
+    {{ this.place.name }}
+  </h2>
+  <p>
+    City: {{this.place.city}}
+  </p>
+  <p>
+    Address: {{this.place.address}}
+  </p>
+  <p>
+    Category: {{this.place.category}}
+  </p>
+  <div *ngFor="let t of this.place.tags">
+    <span  class="badge badge-primary">{{ t }}</span>
+  </div>
 </div>

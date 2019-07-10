@@ -44,6 +44,9 @@ export class EventsComponent implements OnInit {
             this.evntsService.events.push(x);
           }
         }
+/*        (response) => {
+          console.log(response);
+        }*/
       );
   }
 
@@ -87,6 +90,6 @@ export class EventsComponent implements OnInit {
     this.selectedEventIndex = index;
     console.log('index of the selected card is: ' + index);
     const pid = this.evntsService.getEventIDbyIndex(index);
-    this.router.navigate(['/places/' + pid]);
+    this.router.navigate(['/events/' + pid]);
   }
 }

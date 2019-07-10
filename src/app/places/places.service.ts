@@ -29,6 +29,5 @@ export class PlacesService {
 
   storeSelected(ri: number, ci: number) {
     this.selectedPlace = this.places[ri][ci];
-    console.log(this.selectedPlace);
   }
 }

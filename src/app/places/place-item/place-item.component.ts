@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Params} from '@angular/router';
+import {PlacesService} from '../places.service';
 
 @Component({
   selector: 'app-place-item',
@@ -9,25 +10,19 @@ import {ActivatedRoute, Params} from '@angular/router';
 export class PlaceItemComponent implements OnInit {
 
   id: number;
-  event;
+  place;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute,
+              private plcsService: PlacesService) { }
 
   ngOnInit() {
     this.route.params
       .subscribe(
         (params: Params) => {
-          this.id = +params.id
-            .subscribe(
-              (response: any) => {
-/*                this.userEmails = [];
-                console.log(response);
-                this.adminEmail = response.admin.email;
-                for (const member of response.members) {
-                  this.userEmails.push(member.email);
-                }*/
-              }
-            );
+          this.id = +params.id;
+          this.place = this.plcsService.selectedPlace;
+          console.log('selected place: ');
+          console.log(this.place);
         }
       );
   }
