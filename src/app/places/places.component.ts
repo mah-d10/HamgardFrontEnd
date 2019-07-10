@@ -51,7 +51,8 @@ export class PlacesComponent implements OnInit {
     const index = ri * 4 + ci;
     this.selectedPlaceIndex = index;
     console.log('index of the selected card is: ' + index);
-    const pid = this.plcsService.getPlaceIDbyIndex(index);
+    const pid = this.places[ri][ci].id;
+    console.log('id of the selected card is: ' + pid);
     this.router.navigate(['/places/' + pid]);
   }
 

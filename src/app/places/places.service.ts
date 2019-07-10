@@ -24,9 +24,4 @@ export class PlacesService {
       params: {q: searchString}, headers: hs
     });
   }
-
-  getPlaceIDbyIndex(index: number) {
-    return 5;
-    // to do
-  }
 }
