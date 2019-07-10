@@ -89,7 +89,9 @@ export class EventsComponent implements OnInit {
     const index = ri * 4 + ci;
     this.selectedEventIndex = index;
     console.log('index of the selected card is: ' + index);
-    const pid = this.evntsService.getEventIDbyIndex(index);
-    this.router.navigate(['/events/' + pid]);
+    const eid = this.events[ri][ci].id;
+    console.log('id of the selected card is: ' + eid);
+    this.evntsService.storeSelected(ri, ci);
+    this.router.navigate(['/events/' + eid]);
   }
 }

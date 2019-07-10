@@ -5,6 +5,8 @@ import {AuthService} from '../auth/auth.service';
 @Injectable()
 export class EventsService {
 
+  selectedEvent;
+
   constructor(private http: HttpClient,
               private authService: AuthService) {
   }
@@ -27,8 +29,9 @@ export class EventsService {
     });
   }
 
-  getEventIDbyIndex(index: number) {
-    return 5;
-    // to do
+  storeSelected(ri: number, ci: number) {
+    this.selectedEvent = this.events[ri][ci];
+    console.log(this.selectedEvent);
   }
+
 }
