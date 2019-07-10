@@ -45,8 +45,11 @@ export class GroupsEditComponent implements OnInit {
     this.grpService.leaveGroup(this.group.gID)
       .subscribe(
         (response) => {
+          console.log('leaveClicked resonse: ');
           console.log(response);
         }
       );
+    this.grpService.groupsChanged.emit(this.grpService.groups);
+    this.router.navigate(['/groups-start']);
   }
 }

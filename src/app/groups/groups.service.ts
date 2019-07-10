@@ -15,6 +15,7 @@ export class GroupsService {
   }
 
   public groupSelected = new EventEmitter<Group>();
+  public groupsChanged = new EventEmitter<Group[]>();
 
   groups: Group[] = [];
 
@@ -34,7 +35,6 @@ export class GroupsService {
       emails: [email1, email2, email3],
       summary: sum
     }, { headers: hs});
-    this.router.navigate(['/']);
   }
 
   public getUsersOfTheGroup(gid: number) {
@@ -44,18 +44,9 @@ export class GroupsService {
 
   public leaveGroup(gid: number) {
     const hs = new HttpHeaders({Authorization: this.authService.getToken()});
+    this.groups.splice(this.selectedIndex, 1);
     return this.http.post(this.host + '/group/api/v1/leave/', { group_id: gid}, {headers: hs});
   }
-
-/*  public getIDbyIndex(index: number) {
-    // tslint:disable-next-line:prefer-for-of
-    for (let i = 0; i < this.groups.length; i++) {
-      if (this.groups[i].gID === index) {
-        console.log('found');
-        return this.groups[i].gID;
-      }
-    }
-  }*/
 
   public addGroup(g) {
     const obj = new Group(g.id, g.name, g.admin_id, g.members_count, g.admin_email, null, g.summary);

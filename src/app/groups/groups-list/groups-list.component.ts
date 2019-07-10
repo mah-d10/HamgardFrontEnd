@@ -13,11 +13,19 @@ export class GroupsListComponent implements OnInit {
   groups: Group[] = [];
 
   constructor(private grpService: GroupsService) {
+    this.grpService.groupsChanged
+      .subscribe(
+        (response) => {
+          console.log('groupsChanged event emitted:');
+          console.log(response);
+        }
+      );
   }
 
   ngOnInit() {
     this.grpService.groups = [];
-    this.grpService.getGroups().subscribe(
+    this.grpService.getGroups()
+      .subscribe(
       (response: any[]) => {
         console.log('getGroups response is' + response);
         for (const g of response) {
