@@ -11,6 +11,7 @@ export class PlaceItemComponent implements OnInit {
 
   id: number;
   place;
+  events;
 
   constructor(private route: ActivatedRoute,
               private plcsService: PlacesService) { }
@@ -25,6 +26,8 @@ export class PlaceItemComponent implements OnInit {
           console.log(this.place);
         }
       );
+
+    this.plcsService.getEvents();
   }
 
 }
