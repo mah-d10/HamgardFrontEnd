@@ -5,6 +5,8 @@ import {AuthService} from '../auth/auth.service';
 @Injectable()
 export class PlacesService {
 
+  selectedPlace;
+
   constructor(private http: HttpClient,
               private authService: AuthService) {
   }
@@ -15,13 +17,18 @@ export class PlacesService {
 
   getPlaces() {
     const hs = new HttpHeaders({Authorization: this.authService.getToken()});
-    return this.http.get(this.host + '/event/api/v1/places/', {headers: hs});
+    return this.http.get(this.host + '/event/api/v1/places/');
   }
 
   search(searchString: string) {
     const hs = new HttpHeaders({Authorization: this.authService.getToken()});
     return this.http.get(this.host + '/event/api/v1/places/search', {
-      params: {q: searchString}, headers: hs
+      params: {q: searchString}
     });
+  }
+
+  storeSelected(ri: number, ci: number) {
+    this.selectedPlace = this.places[ri][ci];
+    console.log(this.selectedPlace);
   }
 }

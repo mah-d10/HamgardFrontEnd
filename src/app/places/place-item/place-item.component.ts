@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute, Params} from '@angular/router';
 
 @Component({
   selector: 'app-place-item',
@@ -7,9 +8,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlaceItemComponent implements OnInit {
 
-  constructor() { }
+  id: number;
+  event;
+
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.route.params
+      .subscribe(
+        (params: Params) => {
+          this.id = +params.id
+            .subscribe(
+              (response: any) => {
+/*                this.userEmails = [];
+                console.log(response);
+                this.adminEmail = response.admin.email;
+                for (const member of response.members) {
+                  this.userEmails.push(member.email);
+                }*/
+              }
+            );
+        }
+      );
   }
 
 }

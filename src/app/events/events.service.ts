@@ -16,14 +16,14 @@ export class EventsService {
   getEvents() {
     const hs = new HttpHeaders({Authorization: this.authService.getToken()});
     return this.http.get(this.host + '/event/api/v1/events/search', {
-      params: {q: ''}, headers: hs
+      params: {q: ''}
     });
   }
 
   search(searchString: string) {
     const hs = new HttpHeaders({Authorization: this.authService.getToken()});
     return this.http.get(this.host + '/event/api/v1/places/search', {
-      params: {q: searchString}, headers: hs
+      params: {q: searchString}
     });
   }
 
