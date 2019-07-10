@@ -22,8 +22,6 @@ export class PlaceItemComponent implements OnInit {
         (params: Params) => {
           this.id = +params.id;
           this.place = this.plcsService.selectedPlace;
-          console.log('selected place: ');
-          console.log(this.place);
         }
       );
 
