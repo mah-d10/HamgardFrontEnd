@@ -11,10 +11,12 @@ import {Router} from '@angular/router';
 })
 export class GroupsNewComponent implements OnInit {
 
-  constructor(private grpService: GroupsService,
-              private router: Router) { }
+  userEmails: [];
+
+  constructor(private grpService: GroupsService) { }
 
   ngOnInit() {
+    this.userEmails = [];
   }
 
   onSubmit(form: NgForm) {
