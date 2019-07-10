@@ -1,0 +1,25 @@
+<div class="container mt-3">
+
+  <form class="navbar-form" role="search" ngForm>
+    <div class="input-group mb-4">
+      <input id="searchInput"
+             placeholder="What're you searching for?"
+             name="searchInput"
+             class="form-control form-control-underlined" [(ngModel)]="searchString">
+      <button *ngIf="!searchBtnClicked" class="btn" (click)="search()"><i class="fa fa-search"></i></button>
+      <button *ngIf="searchBtnClicked" class="btn" (click)="clearSearch()"><i class="fa fa-times-circle"></i></button>
+    </div>
+  </form>
+
+  <div class="row mt-2 mb-2" *ngFor="let r of this.events; let ri = index;">
+    <div *ngFor="let p of r; let pi = index" class="col-md-3">
+      <div (click)="cardSelected(ri, pi)" class="card text-center" style="cursor: pointer">
+        <img class="card-img-top" src="{{'http://192.168.43.124:8001' + p.images[0]}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{ p.vendor }}</h5>
+          <p class="card-text">{{ p.address }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -10,7 +10,13 @@ import { HomeComponent } from './home/home.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
-import {AuthService} from './auth/auth.service';
+import { AuthService } from './auth/auth.service';
+import { PlacesComponent } from './places/places.component';
+import {PlacesService} from './places/places.service';
+import { EventsComponent } from './events/events.component';
+import {EventsService} from './events/events.service';
+import { PlaceItemComponent } from './places/place-item/place-item.component';
+import { EventItemComponent } from './events/event-item/event-item.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +25,11 @@ import {AuthService} from './auth/auth.service';
     HomeComponent,
     SignupComponent,
     SigninComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    PlacesComponent,
+    EventsComponent,
+    PlaceItemComponent,
+    EventItemComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +37,7 @@ import {AuthService} from './auth/auth.service';
     FormsModule,
     HttpClientModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, PlacesService, EventsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
