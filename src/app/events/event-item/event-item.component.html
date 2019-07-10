@@ -1,0 +1,21 @@
+<div class="container mt-3">
+  <img src="{{ 'http://192.168.43.124:8001' + this.event.images[0]}}" alt="">
+  <h2>
+    {{ this.event.title }}
+  </h2>
+  <p>
+    Address: {{this.event.address}}
+  </p>
+  <p>
+    Category: {{this.event.category}}
+  </p>
+  <p>
+    Discount: {{this.event.discount + '%'}}
+  </p>
+  <p>
+    Price: {{this.event.price + '$'}}
+  </p>
+  <p>
+    Summary: {{this.event.summary}}
+  </p>
+</div>

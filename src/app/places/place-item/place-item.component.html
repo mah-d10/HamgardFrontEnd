@@ -1,0 +1,18 @@
+<div class="container mt-3">
+  <img src="{{ 'http://192.168.43.124:8001' + this.place.images[0]}}" alt="">
+  <h2>
+    {{ this.place.name }}
+  </h2>
+  <p>
+    City: {{this.place.city}}
+  </p>
+  <p>
+    Address: {{this.place.address}}
+  </p>
+  <p>
+    Category: {{this.place.category}}
+  </p>
+  <div *ngFor="let t of this.place.tags">
+    <span  class="badge badge-primary">{{ t }}</span>
+  </div>
+</div>
